@@ -1,9 +1,15 @@
 spring:
   application:
     name: 'user-service'
+  config:
+    import: configserver:http://config-server:8061
+  datasource:
+    username: ${POSTGRES_USERNAME}
+    password: ${POSTGRES_PASSWORD}
+    url: ${POSTGRES_DSN}
   jpa:
     hibernate:
-      ddl-auto: validate
+      ddl-auto: update
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
@@ -12,12 +18,12 @@ spring:
       enabled: true
   profiles:
     active: 'all'
-  config:
-    import: 'configserver:http://localhost:8061'
 server:
+  port: 8005
   error:
     include-message: always
     include-stacktrace: never
-  port: 8050
-  servlet:
-    context-path: '/user-service'
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_SERVICE_URL}

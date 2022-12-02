@@ -12,7 +12,7 @@ import java.util.List;
 @Data
 @Accessors(chain = true)
 @Entity
-@Table(name = "user", schema = "public")
+@Table(name = "user")
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
