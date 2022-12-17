@@ -3,6 +3,7 @@ package pl.edu.pk.cosmo.habsatbackend.userservice.service.impl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import pl.edu.pk.cosmo.habsatbackend.userservice.converter.UserConverter;
 import pl.edu.pk.cosmo.habsatbackend.userservice.entity.Mail;
 import pl.edu.pk.cosmo.habsatbackend.userservice.entity.User;
@@ -18,7 +19,6 @@ import pl.edu.pk.cosmo.habsatbackend.userservice.repository.UserRepository;
 import pl.edu.pk.cosmo.habsatbackend.userservice.service.EmailService;
 import pl.edu.pk.cosmo.habsatbackend.userservice.service.UserService;
 
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 

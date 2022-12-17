@@ -3,6 +3,7 @@ package pl.edu.pk.cosmo.habsatbackend.userservice.service.impl;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import pl.edu.pk.cosmo.habsatbackend.userservice.converter.RoleConverter;
 import pl.edu.pk.cosmo.habsatbackend.userservice.entity.User;
 import pl.edu.pk.cosmo.habsatbackend.userservice.entity.request.AddRolesRequest;
@@ -13,7 +14,6 @@ import pl.edu.pk.cosmo.habsatbackend.userservice.exception.NoUserException;
 import pl.edu.pk.cosmo.habsatbackend.userservice.repository.UserRepository;
 import pl.edu.pk.cosmo.habsatbackend.userservice.service.RoleService;
 
-import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
